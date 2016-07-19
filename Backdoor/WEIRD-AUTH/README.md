@@ -70,8 +70,4 @@ as the `sha256` of `string2` don't yield the correct flag. The last piece of the
 puzzle is realizing that the `md5` computation is misdirection -- the variable 
 `string` is actually just the `base64` encoding of the flag (as hinted by the
 trademark `==` of `base64` strings). Indeed, if we `base64` decode the string, 
-we are left with the flag:
-
-```
-SHA256{61f_15_n1c3_70_h1d3_my_j4v4_pr06r4m}
-```
+we are left with the flag.
