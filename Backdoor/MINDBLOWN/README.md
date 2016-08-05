@@ -1,5 +1,4 @@
 # Backdoor: MINDBLOWN
-====
 
 ## URL: https://backdoor.sdslabs.co/challenges/MINDBLOWN
 
