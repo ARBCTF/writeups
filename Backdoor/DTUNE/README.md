@@ -76,7 +76,7 @@ substituded for spaces to ease readability) and the four "2's" in the flag
 part of the answer is actually broken up into a 'C' and a 'A'. If you listen
 closely (there's a small pause between letters).
 
-In the end the text is "The flag is sha256 of EPCDHXHMCAQW"
+In the end the text is "The flag is sha256 of PLZ_GO_DO_IT_YOURSELF"
 The trickiest part after getting most of the legwork done, was figuring out
 the flag itself needed to be capitalized. This alone took a while to figure out
 since it was thought the decoding was incorrect still.

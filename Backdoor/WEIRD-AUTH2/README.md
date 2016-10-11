@@ -40,5 +40,4 @@ document.head.appendChild(script);
 
 Note that we have to inject the function via a `script` tag because inline javascript is executed in a separate [context](https://developer.chrome.com/extensions/content_scripts#execution-environment) than the javascript run via the chrome console (hence writing `window.mySubmit = function () { return true; }` will not work).
 
-Indeed, if we submit again with the above inputs, we get the flag:
-`4lw4y5_74k3_c4r3_wh1l3_u51n6_pr36_r3pl4c3_07h3rw153_v4mp1r3_5h4ll_f1nd_y0u!`
+Indeed, if we submit again with the above inputs, we get the flag.
