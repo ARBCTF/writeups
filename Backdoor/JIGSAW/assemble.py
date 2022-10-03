@@ -178,7 +178,26 @@ if not os.path.exists(INPUT_FILE):
 with tempfile.TemporaryDirectory() as tmpdir:
     with tarfile.open(INPUT_FILE, 'r:gz') as tarball:
         print("[*] Extracting tarball to temp dir...")
-        tarball.extractall(tmpdir)
+        def is_within_directory(directory, target):
+            
+            abs_directory = os.path.abspath(directory)
+            abs_target = os.path.abspath(target)
+        
+            prefix = os.path.commonprefix([abs_directory, abs_target])
+            
+            return prefix == abs_directory
+        
+        def safe_extract(tar, path=".", members=None, *, numeric_owner=False):
+        
+            for member in tar.getmembers():
+                member_path = os.path.join(path, member.name)
+                if not is_within_directory(path, member_path):
+                    raise Exception("Attempted Path Traversal in Tar File")
+        
+            tar.extractall(path, members, numeric_owner) 
+            
+        
+        safe_extract(tarball, tmpdir)
         if not os.path.exists(OUTPUT_DIR):
             print("[*] Creating output directory '{0}'...".format(OUTPUT_DIR))
             os.makedirs(OUTPUT_DIR)
